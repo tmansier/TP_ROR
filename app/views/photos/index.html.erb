@@ -13,7 +13,7 @@
   <%- @photos.each do |photo| %>
   <hr>
   <p>Fichier : </p><%= image_tag photo.filename.thumb %>
-  <p>Name : <%= link_to @u.fullname, user_path(@u) %></p>
+  <p>Username : <%= link_to @u.fullname, user_path(@u) %></p>
   <p>Nom : <%= photo.name %></p>
   <%= link_to "Edit", edit_user_photo_path(@u,photo)%>
   <%= link_to "Delete", user_photo_path(@u,photo), method: :delete, data: { confirm: "You sure?" } %>
