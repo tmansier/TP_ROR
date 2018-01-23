@@ -1,0 +1,5 @@
+<%= form_for @p , url: [@u,@p] do |f| %>
+Filename : <%= f.file_field :filename %><%= @p.errors.messages[:filename]%>
+Name <%= f.text_field "name" %><%= @p.errors.messages[:name]%>
+<%= f.submit %>
+<% end %>

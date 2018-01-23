@@ -1,0 +1,7 @@
+<%= form_for @u do |f| %>
+<%= f.text_field "firstname" %><%= @u.errors.messages[:firstname]%>
+<%= f.text_field "lastname" %><%= @u.errors.messages[:lastname]%>
+<%= f.number_field "age" %><%= @u.errors.messages[:age]%>
+
+<%= f.submit %>
+<% end %>

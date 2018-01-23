@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+</head>
+<body>
+  <%= link_to "+ User", new_user_path%>
+  <h2>Users</h2>
+
+  <p><%= @users.count %></p>
+
+  <%- @users.each do |user| %>
+  <hr>
+  <p>Prénom : <%= user.firstname %></p>
+  <p>Nom : <%= user.lastname %></p>
+  <p>Age : <%= user.age %> (<%= user.age < 18 ? "Mineur" : "Majeur" %>)</p>
+  <%= link_to "Photos" , user_photos_path(user) %>
+  <%= link_to "Edit", controller: "users", action: "edit", id: user.id %>
+  <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+  <hr>
+  <%- end %>
+
+</body>
+</html>
